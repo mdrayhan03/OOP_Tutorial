@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.InternshipFxml">
+   <children>
+      <Label layoutX="43.0" layoutY="42.0" text="Intern ID" />
+      <Label layoutX="43.0" layoutY="67.0" text="Intern Name" />
+      <Label layoutX="41.0" layoutY="93.0" text="University Name" />
+      <Label layoutX="41.0" layoutY="118.0" text="Payment Status" />
+      <ComboBox fx:id="idComboBox" layoutX="140.0" layoutY="38.0" onAction="#internOnAction" prefHeight="25.0" prefWidth="94.0" />
+      <Label fx:id="nameLabel" layoutX="140.0" layoutY="67.0" text="Label" />
+      <Label fx:id="uniNameLabel" layoutX="140.0" layoutY="92.0" text="Label" />
+      <Label fx:id="statusLabel" layoutX="140.0" layoutY="118.0" text="Label" />
+      <Line endX="-30.66668701171875" endY="4.333343505859375" layoutX="289.0" layoutY="139.0" startX="-30.66668701171875" startY="-132.3333282470703" />
+      <CheckBox fx:id="sprinCheckBox" layoutX="276.0" layoutY="50.0" mnemonicParsing="false" text="Sprint Boot" />
+      <CheckBox fx:id="blockChainCheckBox" layoutX="276.0" layoutY="84.0" mnemonicParsing="false" text="BlockChain" />
+      <CheckBox fx:id="skillCheckBox" layoutX="369.0" layoutY="50.0" mnemonicParsing="false" text="Communication Skill" />
+      <CheckBox fx:id="programmingCheckBox" layoutX="369.0" layoutY="84.0" mnemonicParsing="false" text="Programming" />
+      <Button layoutX="519.0" layoutY="8.0" mnemonicParsing="false" onAction="#showTrainingInfoButtonOnMouseClick" prefHeight="172.0" prefWidth="67.0" text="Show Training Info in Table Below" textAlignment="CENTER" wrapText="true" />
+      <Button layoutX="10.0" layoutY="153.0" mnemonicParsing="false" onMouseClicked="#addANewTraineeButtonOnMouseClick" prefHeight="25.0" prefWidth="497.0" text="Add a Trainee Instance in traineeList" />
+      <TableView fx:id="internTableView" layoutY="219.0" prefHeight="82.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="idTableColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="uniNameTableColumn" prefWidth="119.0" text="Uni name" />
+            <TableColumn fx:id="trainingTableColumn" prefWidth="108.3333740234375" text="Training selected for" />
+            <TableColumn fx:id="noOfTrainingTableColumn" prefWidth="144.0" text="Number of training" />
+            <TableColumn fx:id="paidTableColumn" prefWidth="132.0" text="Paid Intern" />
+        </columns>
+      </TableView>
+      <Label layoutX="18.0" layoutY="343.0" text="Select Uni name" />
+      <Label layoutX="19.0" layoutY="364.0" text="Select Payment Status" />
+      <ComboBox fx:id="uniNameComboBox" layoutX="143.0" layoutY="331.0" prefWidth="150.0" />
+      <ComboBox fx:id="statusComboBox" layoutX="144.0" layoutY="360.0" prefWidth="150.0" />
+      <Button layoutX="19.0" layoutY="399.0" mnemonicParsing="false" onAction="#showTraineeCountButtonOnMouseClick" prefHeight="25.0" prefWidth="273.0" text="Show Trainee count on University Name and Payment Status" wrapText="true" />
+      <Label fx:id="showOutputLabel" layoutX="317.0" layoutY="315.0" prefHeight="102.0" prefWidth="273.0" style="-fx-border-color: black;" text="Label" wrapText="true" />
+      <Line endX="64.66668701171875" endY="46.0" layoutX="442.0" layoutY="86.0" startX="64.66668701171875" startY="-68.0" />
+      <Line endX="358.0" layoutX="229.0" layoutY="303.0" startX="-217.33334350585938" />
+      <ComboBox fx:id="filterComboBox" layoutX="184.0" layoutY="187.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
