@@ -1,0 +1,7 @@
+Buying Bus tickets
+Creating Ticket
+Buying ticket
+
+Ticket {
+	uid, exp_date, issue_time, `seat_no, customer_name, phone_no, email, status, from, to, vip_status, gender, preference_gender
+}

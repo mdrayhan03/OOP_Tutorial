@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.BusTicket">
+   <children>
+      <Line endX="-100.0" endY="342.33331298828125" layoutX="594.0" layoutY="137.0" startX="-100.0" startY="-110.33333587646484" />
+      <Label layoutX="141.0" layoutY="26.0" text="Create Ticket">
+         <font>
+            <Font name="Century Gothic Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="119.0" text="Customer Name" />
+      <Label layoutX="34.0" layoutY="144.0" text="Phone No" />
+      <Label layoutX="34.0" layoutY="312.0" text="Seat No" />
+      <Label layoutX="34.0" layoutY="287.0" text="Exp Date" />
+      <Label layoutX="34.0" layoutY="258.0" text="From" />
+      <Label layoutX="34.0" layoutY="229.0" text="Preference Gender" />
+      <Label layoutX="34.0" layoutY="198.0" text="Gender" />
+      <Label layoutX="34.0" layoutY="169.0" text="Email" />
+      <Label layoutX="326.0" layoutY="258.0" text="To" />
+      <Label layoutX="36.0" layoutY="339.0" text="Vip " />
+      <Label layoutX="326.0" layoutY="119.0" text="Status" />
+      <Label layoutX="30.0" layoutY="370.0" text="Issue Date" />
+      <Label layoutX="34.0" layoutY="94.0" text="Ticket Number" />
+      <TextField fx:id="customerNameTF" layoutX="141.0" layoutY="115.0" />
+      <TextField fx:id="pNTF" layoutX="141.0" layoutY="140.0" />
+      <TextField fx:id="emailTF" layoutX="141.0" layoutY="165.0" />
+      <TextField fx:id="exp_dateTF" editable="false" layoutX="141.0" layoutY="283.0" />
+      <TextField fx:id="seatNoTF" layoutX="141.0" layoutY="308.0" />
+      <TextField fx:id="uidTF" editable="false" layoutX="141.0" layoutY="90.0" />
+      <TextField fx:id="statusTF" editable="false" layoutX="366.0" layoutY="115.0" prefHeight="25.0" prefWidth="111.0" />
+      <TextField fx:id="issueDateTF" editable="false" layoutX="141.0" layoutY="366.0" />
+      <Button layoutX="232.0" layoutY="400.0" mnemonicParsing="false" onAction="#createTicketOA" text="Create" />
+      <Label fx:id="outputLabel" alignment="CENTER" layoutX="28.0" layoutY="445.0" prefHeight="46.0" prefWidth="447.0" text="Label" />
+      <ComboBox fx:id="genderCB" layoutX="141.0" layoutY="194.0" prefWidth="150.0" />
+      <ComboBox fx:id="preGCB" layoutX="141.0" layoutY="225.0" prefWidth="150.0" />
+      <ComboBox fx:id="fromCB" layoutX="141.0" layoutY="254.0" prefWidth="150.0" />
+      <ComboBox fx:id="toCB" layoutX="347.0" layoutY="254.0" prefHeight="25.0" prefWidth="130.0" />
+      <ComboBox fx:id="vipCB" layoutX="141.0" layoutY="335.0" prefWidth="150.0" />
+      <Button layoutX="333.0" layoutY="400.0" mnemonicParsing="false" onAction="#infoClearOA" text="Clear" />
+   </children>
+</AnchorPane>
