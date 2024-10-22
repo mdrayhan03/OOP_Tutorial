@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.BusTicket">
    <children>
       <Line endX="-100.0" endY="342.33331298828125" layoutX="594.0" layoutY="137.0" startX="-100.0" startY="-110.33333587646484" />
@@ -46,5 +45,18 @@
       <ComboBox fx:id="toCB" layoutX="347.0" layoutY="254.0" prefHeight="25.0" prefWidth="130.0" />
       <ComboBox fx:id="vipCB" layoutX="141.0" layoutY="335.0" prefWidth="150.0" />
       <Button layoutX="333.0" layoutY="400.0" mnemonicParsing="false" onAction="#infoClearOA" text="Clear" />
+      <Label layoutX="562.0" layoutY="26.0" text="Checking">
+         <font>
+            <Font name="Century Gothic Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="516.0" layoutY="103.0" text="Ticket No" />
+      <Label fx:id="showInfoLabel" alignment="TOP_LEFT" layoutX="517.0" layoutY="153.0" prefHeight="292.0" prefWidth="215.0" text="Label" />
+      <Button layoutX="500.0" layoutY="456.0" mnemonicParsing="false" onAction="#checkButtonOA" text="Check" />
+      <TextField fx:id="checkTNTF" layoutX="584.0" layoutY="99.0" />
+      <Label layoutX="516.0" layoutY="132.0" text="Ticket No" />
+      <ComboBox fx:id="checkTicketCB" layoutX="584.0" layoutY="128.0" onAction="#comboboxOA" prefWidth="150.0" />
+      <Button layoutX="584.0" layoutY="456.0" mnemonicParsing="false" onAction="#statusUpdateOA" text="Update" />
+      <Button layoutX="682.0" layoutY="456.0" mnemonicParsing="false" onAction="#deleteDataOA" text="Delete" />
    </children>
 </AnchorPane>
