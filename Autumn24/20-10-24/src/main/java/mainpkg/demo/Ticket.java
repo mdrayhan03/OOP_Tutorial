@@ -18,6 +18,8 @@ public class Ticket {
         this.from = from;
         this.to = to;
         this.seat_no = seat_no;
+        this.generate_ticket_no();
+        this.dates();
     }
 
     public String getTicket_no() {
@@ -126,20 +128,20 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
-                "ticket_no='" + ticket_no + '\'' +
-                ", name='" + name + '\'' +
-                ", pN='" + pN + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", preGender='" + preGender + '\'' +
-                ", exp_date='" + exp_date + '\'' +
-                ", issue_date='" + issue_date + '\'' +
-                ", vip='" + vip + '\'' +
-                ", status='" + status + '\'' +
-                ", from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", seat_no='" + seat_no + '\'' +
+        return "Ticket{" + "\n" +
+                "ticket_no='" + ticket_no + '\n' +
+                ", name='" + name + '\n' +
+                ", pN='" + pN + '\n' +
+                ", email='" + email + '\n' +
+                ", gender='" + gender + '\n' +
+                ", preGender='" + preGender + '\n' +
+                ", exp_date='" + exp_date + '\n' +
+                ", issue_date='" + issue_date + '\n' +
+                ", vip='" + vip + '\n' +
+                ", status='" + status + '\n' +
+                ", from='" + from + '\n' +
+                ", to='" + to + '\n' +
+                ", seat_no='" + seat_no + '\n' +
                 '}';
     }
 

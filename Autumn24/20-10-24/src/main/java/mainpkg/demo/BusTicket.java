@@ -1,10 +1,14 @@
 package mainpkg.demo;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class BusTicket
@@ -37,6 +41,15 @@ public class BusTicket
     private ComboBox<String> preGCB;
     @javafx.fxml.FXML
     private TextField statusTF;
+    @javafx.fxml.FXML
+    private Label showInfoLabel;
+    @javafx.fxml.FXML
+    private TextField checkTNTF;
+    @javafx.fxml.FXML
+    private ComboBox<String> checkTicketCB;
+
+    ObservableList<Ticket> ticketObservableArray = FXCollections.observableArrayList() ;
+    ObservableList<String> ticketNoObservableArray = FXCollections.observableArrayList() ;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -93,9 +106,12 @@ public class BusTicket
 
         if (isValid) {
             Ticket ticket = new Ticket(name, pN, email, gender, preG, vip, from, to, seat_no) ;
+            ticketObservableArray.add(ticket) ;
+            ticketNoObservableArray.add(ticket.getTicket_no()) ;
 
-            ticket.generate_ticket_no() ;
-            ticket.dates() ;
+            checkTicketCB.setItems(ticketNoObservableArray) ;
+
+            System.out.println(ticketObservableArray) ;
 
             uidTF.setText(ticket.getTicket_no()) ;
             statusTF.setText(ticket.getStatus()) ;
@@ -124,5 +140,83 @@ public class BusTicket
         toCB.setValue("--Select--");
         vipCB.setValue("--Select--");
         outputLabel.setText("");
+    }
+
+    @javafx.fxml.FXML
+    public void checkButtonOA(ActionEvent actionEvent) {
+        String check_ticket_no ;
+        check_ticket_no = checkTNTF.getText() ;
+
+        if(check_ticket_no.length() == 9) {
+            for (Ticket t : ticketObservableArray) {
+                if (Objects.equals(t.getTicket_no(), check_ticket_no)) {
+                    showInfoLabel.setText(t.toString());
+                    break;
+                }
+                else {
+                    showInfoLabel.setText("No Ticket found.");
+                }
+            }
+        }
+        else {
+            showInfoLabel.setText("Ticket No error.");
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void comboboxOA(ActionEvent actionEvent) {
+        String check_ticket_no ;
+        check_ticket_no = checkTicketCB.getValue() ;
+
+        if(check_ticket_no.length() == 9) {
+            for (Ticket t : ticketObservableArray) {
+                if (Objects.equals(t.getTicket_no(), check_ticket_no)) {
+                    showInfoLabel.setText(t.toString());
+                    break;
+                }
+                else {
+                    showInfoLabel.setText("No Ticket found.");
+                }
+            }
+        }
+        else {
+            showInfoLabel.setText("Ticket No error.");
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void statusUpdateOA(ActionEvent actionEvent) {
+        String check_ticket_no ;
+        check_ticket_no = checkTicketCB.getValue() ;
+
+        if(check_ticket_no.length() == 9) {
+            for (Ticket t : ticketObservableArray) {
+                if (Objects.equals(t.getTicket_no(), check_ticket_no)) {
+                    t.setStatus("Done");
+                    break;
+                } else {
+                    showInfoLabel.setText("No Ticket found.");
+                }
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void deleteDataOA(ActionEvent actionEvent) {
+        String check_ticket_no ;
+        check_ticket_no = checkTicketCB.getValue() ;
+
+        if(check_ticket_no.length() == 9) {
+            for (Ticket t : ticketObservableArray) {
+                if (Objects.equals(t.getTicket_no(), check_ticket_no)) {
+                    ticketObservableArray.remove(t) ;
+                    ticketNoObservableArray.remove(t.getTicket_no());
+                    break;
+                } else {
+                    showInfoLabel.setText("No Ticket found.");
+                }
+            }
+        }
+        System.out.println(ticketObservableArray);
     }
 }
