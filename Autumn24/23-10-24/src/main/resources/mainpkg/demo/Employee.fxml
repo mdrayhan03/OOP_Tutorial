@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.EmployeeController">
+   <children>
+      <Label layoutX="29.0" layoutY="31.0" text="Employee ID" />
+      <Label layoutX="29.0" layoutY="65.0" text="Name" />
+      <Label layoutX="29.0" layoutY="97.0" text="Designation" />
+      <Label layoutX="355.0" layoutY="97.0" text="DOJ" />
+      <Label layoutX="355.0" layoutY="65.0" text="DOB" />
+      <Label layoutX="355.0" layoutY="33.0" text="Salary" />
+      <TextField fx:id="idTF" layoutX="111.0" layoutY="24.0" />
+      <TextField fx:id="salaryTF" layoutX="399.0" layoutY="27.0" />
+      <TextField fx:id="nameTF" layoutX="111.0" layoutY="58.0" />
+      <ComboBox fx:id="designationCB" layoutX="111.0" layoutY="99.0" prefWidth="150.0" />
+      <DatePicker fx:id="dobDP" layoutX="399.0" layoutY="61.0" />
+      <DatePicker fx:id="dojDP" layoutX="399.0" layoutY="93.0" />
+      <Button layoutX="27.0" layoutY="141.0" mnemonicParsing="false" onAction="#createEmployeeOA" prefHeight="25.0" prefWidth="548.0" text="Add Employee after validation" />
+      <Label layoutX="31.0" layoutY="192.0" text="Select Employee ID to see information in alert" />
+      <ComboBox fx:id="idCB" layoutX="293.0" layoutY="188.0" prefWidth="150.0" />
+      <Button layoutX="474.0" layoutY="188.0" mnemonicParsing="false" onAction="#showInfoOA" text="Button" />
+      <TableView fx:id="employeeInforTV" layoutY="286.0" prefHeight="114.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="idTC" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameTC" prefWidth="147.0" text="Name" />
+            <TableColumn fx:id="salaryTC" prefWidth="83.0" text="Salary" />
+            <TableColumn fx:id="desiTC" prefWidth="180.0" text="Designation" />
+            <TableColumn fx:id="dojTC" prefWidth="95.6666259765625" text="DOJ" />
+        </columns>
+      </TableView>
+      <Label layoutX="29.0" layoutY="227.0" text="Enter Minimum Salary to Search" />
+      <TextField fx:id="minimumSalaryTF" layoutX="217.0" layoutY="223.0" />
+      <Button layoutX="301.0" layoutY="255.0" mnemonicParsing="false" onAction="#filterButtonOA" text="Search" />
+      <DatePicker fx:id="filterDOJDP" layoutX="399.0" layoutY="223.0" />
+      <Label layoutX="373.0" layoutY="227.0" text="DOJ" />
+   </children>
+</AnchorPane>
