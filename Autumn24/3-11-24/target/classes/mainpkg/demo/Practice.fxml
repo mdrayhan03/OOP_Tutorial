@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.PracticeController">
+   <children>
+      <Label fx:id="label" layoutX="35.0" layoutY="31.0" text="Label" />
+      <TextField fx:id="textField" layoutX="35.0" layoutY="68.0" />
+      <TextArea fx:id="textArea" layoutX="191.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <ComboBox fx:id="combobox" layoutX="35.0" layoutY="114.0" onAction="#comboboxOA" prefWidth="150.0" />
+      <CheckBox fx:id="checkBox" layoutX="35.0" layoutY="163.0" mnemonicParsing="false" text="CheckBox" />
+      <RadioButton fx:id="radioButton1" layoutX="35.0" layoutY="192.0" mnemonicParsing="false" text="RadioButton1">
+         <toggleGroup>
+            <ToggleGroup fx:id="tg" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioButton2" layoutX="35.0" layoutY="210.0" mnemonicParsing="false" text="RadioButton2" toggleGroup="$tg" />
+      <Button fx:id="button" layoutX="408.0" layoutY="127.0" mnemonicParsing="false" onAction="#buttonOA" text="Button" />
+      <TableView fx:id="tableView" layoutY="227.0" prefHeight="43.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="tableColumn1" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="tablecolumn2" prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TableView fx:id="dummytableview" layoutY="286.0" prefHeight="200.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="dummytablecolumn1" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="dummytablecolumn2" prefWidth="75.0" text="C2" />
+            <TableColumn fx:id="dummytablecolumn3" prefWidth="75.0" text="Column X" />
+            <TableColumn fx:id="dummytablecolumn4" prefWidth="75.0" text="Column X" />
+            <TableColumn fx:id="dummytablecolumn5" prefWidth="75.0" text="Column X" />
+            <TableColumn fx:id="dummytablecolumn6" prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
