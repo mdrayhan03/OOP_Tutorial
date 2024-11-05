@@ -12,7 +12,6 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.PracticeController">
    <children>
       <Label fx:id="label" layoutX="35.0" layoutY="31.0" text="Label" />
@@ -26,7 +25,7 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="radioButton2" layoutX="35.0" layoutY="210.0" mnemonicParsing="false" text="RadioButton2" toggleGroup="$tg" />
-      <Button fx:id="button" layoutX="408.0" layoutY="127.0" mnemonicParsing="false" onAction="#buttonOA" text="Button" />
+      <Button fx:id="button" layoutX="399.0" layoutY="19.0" mnemonicParsing="false" onAction="#buttonOA" text="Button" />
       <TableView fx:id="tableView" layoutY="227.0" prefHeight="43.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="tableColumn1" prefWidth="75.0" text="C1" />
@@ -41,6 +40,14 @@
             <TableColumn fx:id="dummytablecolumn4" prefWidth="75.0" text="Column X" />
             <TableColumn fx:id="dummytablecolumn5" prefWidth="75.0" text="Column X" />
             <TableColumn fx:id="dummytablecolumn6" prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
+      <CheckBox fx:id="cb1" layoutX="399.0" layoutY="48.0" mnemonicParsing="false" onAction="#cb1OA" text="1" />
+      <CheckBox fx:id="cb2" layoutX="497.0" layoutY="48.0" mnemonicParsing="false" onAction="#cb2OA" text="2" />
+      <TableView fx:id="cbTV" layoutX="391.0" layoutY="72.0" prefHeight="145.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="cbtc1" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="cbtc2" prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
    </children>
