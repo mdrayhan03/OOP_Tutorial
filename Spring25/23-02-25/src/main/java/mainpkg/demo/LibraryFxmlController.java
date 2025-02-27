@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Objects;
 
 public class LibraryFxmlController
@@ -50,11 +49,30 @@ public class LibraryFxmlController
     private TextField bTSTF;
     @javafx.fxml.FXML
     private Label errorL;
+    @javafx.fxml.FXML
+    private TextArea sMLTA;
+    @javafx.fxml.FXML
+    private TextField sTCTF;
+    @javafx.fxml.FXML
+    private ComboBox<String> uBICB;
+    @javafx.fxml.FXML
+    private TextField sACTF;
+    @javafx.fxml.FXML
+    private TextField nCTF;
+    @javafx.fxml.FXML
+    private DatePicker sDDP;
+    @javafx.fxml.FXML
+    private ComboBox<String> sMICB;
+    @javafx.fxml.FXML
+    private TextArea sMBLTA;
 
     ArrayList<Member> memberArrayList = new ArrayList<>() ;
     ArrayList<Book> bookArrayList = new ArrayList<>() ;
     ArrayList<IssueBook> issueBookArrayList = new ArrayList<>() ;
-    int adminPassword = 1234 ;     ;
+    ArrayList<IssueBook> temporaryList = new ArrayList<>() ;
+    int adminPassword = 1234 ;
+    String bookList = "" ;
+    boolean flag = true ;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,10 +80,78 @@ public class LibraryFxmlController
 
     @javafx.fxml.FXML
     public void giveBooksOA(ActionEvent actionEvent) {
+        for (IssueBook issueBook : temporaryList) {
+            IssueBook i = new IssueBook(issueBook.getMemberId(), issueBook.getBookId(), issueBook.getIssueDate(), issueBook.getReturnDate()) ;
+            issueBookArrayList.add(i) ;
+            for (Book book : bookArrayList) {
+                if (Objects.equals(book.getId(), issueBook.getBookId())) {
+                    book.setAvailableCopy(book.getAvailableCopy() - 1) ;
+                    break;
+                }
+            }
+        }
+        errorL.setText("All issued books are handover.");
+        temporaryList.clear() ;
+        bookList = "" ;
+        bLSTA.clear() ;
+        mIdCB.setValue("Member ID") ;
+        bICB.setValue("Book ID") ;
+        mNSTF.clear() ;
+        tDJTF.clear() ;
+        bTSTF.clear() ;
+        tCSTF.clear() ;
+        aSTF.clear() ;
     }
 
     @javafx.fxml.FXML
     public void bIOA(ActionEvent actionEvent) {
+        boolean issueFlag = true ;
+        String memberID, bookID ;
+        LocalDate returnDate ;
+
+        memberID = mIdCB.getValue() ;
+        bookID = bICB.getValue() ;
+        returnDate = returnDP.getValue() ;
+
+        if (returnDate.isBefore(LocalDate.now())) {
+            errorL.setText("Return date is before today.");
+            issueFlag = false ;
+        }
+
+        for (IssueBook issueBook : issueBookArrayList) {
+            if (Objects.equals(issueBook.getBookId(), bookID) && Objects.equals(issueBook.getMemberId(), memberID)) {
+                errorL.setText("Book already issued.");
+                issueFlag = false ;
+                break ;
+            }
+        }
+
+        for (IssueBook issueBook : temporaryList) {
+            if (Objects.equals(issueBook.getBookId(), bookID) && Objects.equals(issueBook.getMemberId(), memberID)) {
+                errorL.setText("Book already issued.");
+                issueFlag = false ;
+                break ;
+            }
+        }
+
+        for (Book book : bookArrayList) {
+            if (Objects.equals(book.getId(), bookID)) {
+                if (book.getAvailableCopy() == 0) {
+                    issueFlag = false ;
+                    errorL.setText("Book is not available.");
+                    break ;
+                }
+                else {
+                    break ;
+                }
+            }
+        }
+        if (issueFlag && flag) {
+            IssueBook issueBook = new IssueBook(memberID, bookID, LocalDate.now(), returnDate) ;
+            temporaryList.add(issueBook) ;
+            bookList += "Book ID: " + bookID + "\n" ;
+            bLSTA.setText(bookList);
+        }
     }
 
     @javafx.fxml.FXML
@@ -142,11 +228,16 @@ public class LibraryFxmlController
 
     @javafx.fxml.FXML
     public void mIdCBOA(ActionEvent actionEvent) {
+        flag = true ;
         String memberId = mIdCB.getValue() ;
         for (Member member : memberArrayList) {
             if (Objects.equals(member.getId(), memberId)) {
                 mNSTF.setText(member.getName());
                 tDJTF.setText(member.getDoj().toString());
+                if(Objects.equals(member.getStatus(), "running")) {
+                    errorL.setText("Member is suspended.");
+                    flag = false ;
+                }
                 break;
             }
         }
@@ -167,15 +258,112 @@ public class LibraryFxmlController
 
     private void updateMemberIdCB() {
         mIdCB.getItems().clear();
+        sMICB.getItems().clear();
         for (Member member : memberArrayList) {
             mIdCB.getItems().add(member.getId()) ;
+            sMICB.getItems().add(member.getId()) ;
         }
     }
 
     private void updateBookIdCB() {
-        mIdCB.getItems().clear();
+        bICB.getItems().clear();
+        uBICB.getItems().clear();
         for (Book book : bookArrayList) {
             bICB.getItems().add(book.getId()) ;
+            uBICB.getItems().add(book.getId()) ;
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void cancelOA(ActionEvent actionEvent) {
+        errorL.setText("All issued books are canceled.");
+        temporaryList.clear() ;
+        bookList = "" ;
+        bLSTA.clear() ;
+        mIdCB.setValue("Member ID") ;
+        bICB.setValue("Book ID") ;
+        mNSTF.clear() ;
+        tDJTF.clear() ;
+        bTSTF.clear() ;
+        tCSTF.clear() ;
+        aSTF.clear() ;
+    }
+
+    @javafx.fxml.FXML
+    public void uBICBOA(ActionEvent actionEvent) {
+        String bookId = uBICB.getValue() ;
+        String list = "" ;
+        int cnt = 0 ;
+        for (IssueBook issueBook : issueBookArrayList) {
+            if (Objects.equals(issueBook.getBookId(), bookId)) {
+                list += "Member ID: " + issueBook.getMemberId() + "\n" ;
+                cnt ++ ;
+            }
+        }
+        list += "Total member: " + cnt ;
+        sMLTA.setText(list);
+        for (Book book : bookArrayList) {
+            if (Objects.equals(book.getId(), bookId)) {
+                sTCTF.setText(Integer.toString(book.getTotalCopy()));
+                sACTF.setText(Integer.toString(book.getAvailableCopy()));
+                break ;
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void aNCOA(ActionEvent actionEvent) {
+        String bookId = uBICB.getValue() ;
+        int newCopies = Integer.parseInt(nCTF.getText()) ;
+        for (Book book : bookArrayList) {
+            if (Objects.equals(book.getId(), bookId)) {
+                book.setTotalCopy(book.getTotalCopy() + newCopies) ;
+                book.setAvailableCopy(book.getAvailableCopy() + newCopies) ;
+                break ;
+            }
+        }
+        errorL.setText("New copies added.");
+        nCTF.clear();
+        for (Book book : bookArrayList) {
+            if (Objects.equals(book.getId(), bookId)) {
+                sTCTF.setText(Integer.toString(book.getTotalCopy()));
+                sACTF.setText(Integer.toString(book.getAvailableCopy()));
+                break ;
+            }
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void sMICBOA(ActionEvent actionEvent) {
+        String memberId = sMICB.getValue() ;
+        String list = "" ;
+        int cnt = 0 ;
+        for (IssueBook issueBook : issueBookArrayList) {
+            if (Objects.equals(issueBook.getMemberId(), memberId)) {
+                list += "Book ID: " + issueBook.getBookId() + "\n" ;
+                cnt ++ ;
+            }
+        }
+        list += "Total issued book: " + cnt ;
+        sMBLTA.setText(list);
+    }
+
+    @javafx.fxml.FXML
+    public void suspendOA(ActionEvent actionEvent) {
+        String memberId = sMICB.getValue() ;
+        LocalDate sD = sDDP.getValue() ;
+        if (sD.isBefore(LocalDate.now())) {
+            errorL.setText("Suspend date is before today.");
+        }
+        else {
+            for (Member member : memberArrayList) {
+                if (Objects.equals(member.getId(), memberId)) {
+                    member.setStatus("running");
+                    member.setSd(sD);
+                    errorL.setText("Member is suspended.");
+                    break;
+                }
+            }
         }
     }
 }

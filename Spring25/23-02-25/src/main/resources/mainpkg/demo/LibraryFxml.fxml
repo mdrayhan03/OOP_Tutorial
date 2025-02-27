@@ -9,7 +9,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.LibraryFxmlController">
    <children>
       <Label layoutX="259.0" layoutY="6.0" text="Library Manage" />
@@ -25,17 +24,28 @@
       <DatePicker fx:id="bookDojDP" layoutX="437.0" layoutY="44.0" prefHeight="25.0" prefWidth="149.0" promptText="Date of Joining" />
       <PasswordField fx:id="adminPass2PF" layoutX="437.0" layoutY="76.0" promptText="Admin Password" />
       <Button layoutX="437.0" layoutY="107.0" mnemonicParsing="false" onAction="#addBookOA" prefHeight="59.0" prefWidth="149.0" text="Add Book" />
-      <ComboBox fx:id="mIdCB" layoutX="14.0" layoutY="188.0" onAction="#mIdCBOA" prefWidth="150.0" promptText="Memeber ID" />
-      <TextField fx:id="mNSTF" editable="false" layoutX="14.0" layoutY="221.0" promptText="Member Name" />
-      <TextField fx:id="tDJTF" editable="false" layoutX="15.0" layoutY="253.0" promptText="Total date of Join" />
-      <ComboBox fx:id="bICB" layoutX="176.0" layoutY="188.0" onAction="#bIdCBOA" prefWidth="150.0" promptText="Book ID" />
-      <TextField fx:id="bTSTF" editable="false" layoutX="177.0" layoutY="221.0" promptText="Book Title" />
-      <TextField fx:id="tCSTF" editable="false" layoutX="177.0" layoutY="253.0" prefHeight="25.0" prefWidth="83.0" promptText="Total Copy" />
-      <TextField fx:id="aSTF" editable="false" layoutX="265.0" layoutY="253.0" prefHeight="25.0" prefWidth="60.0" promptText="Available" />
-      <DatePicker fx:id="returnDP" layoutX="330.0" layoutY="188.0" prefHeight="25.0" prefWidth="128.0" promptText="Return Date" />
-      <Button layoutX="330.0" layoutY="221.0" mnemonicParsing="false" onAction="#bIOA" prefHeight="59.0" prefWidth="128.0" text="Book Issue" />
-      <TextArea fx:id="bLSTA" layoutX="465.0" layoutY="188.0" prefHeight="59.0" prefWidth="128.0" promptText="Book List" />
-      <Button layoutX="465.0" layoutY="253.0" mnemonicParsing="false" onAction="#giveBooksOA" prefHeight="25.0" prefWidth="128.0" text="Give Books" />
-      <Label fx:id="errorL" layoutX="223.0" layoutY="378.0" text="Error" textFill="RED" />
+      <ComboBox fx:id="mIdCB" layoutX="14.0" layoutY="172.0" onAction="#mIdCBOA" prefWidth="150.0" promptText="Memeber ID" />
+      <TextField fx:id="mNSTF" editable="false" layoutX="14.0" layoutY="205.0" promptText="Member Name" />
+      <TextField fx:id="tDJTF" editable="false" layoutX="15.0" layoutY="237.0" promptText="Total date of Join" />
+      <ComboBox fx:id="bICB" layoutX="176.0" layoutY="172.0" onAction="#bIdCBOA" prefWidth="150.0" promptText="Book ID" />
+      <TextField fx:id="bTSTF" editable="false" layoutX="177.0" layoutY="205.0" promptText="Book Title" />
+      <TextField fx:id="tCSTF" editable="false" layoutX="177.0" layoutY="237.0" prefHeight="25.0" prefWidth="76.0" promptText="Total Copy" />
+      <TextField fx:id="aSTF" editable="false" layoutX="257.0" layoutY="237.0" prefHeight="25.0" prefWidth="69.0" promptText="Available" />
+      <DatePicker fx:id="returnDP" layoutX="330.0" layoutY="172.0" prefHeight="25.0" prefWidth="128.0" promptText="Return Date" />
+      <Button layoutX="330.0" layoutY="205.0" mnemonicParsing="false" onAction="#bIOA" prefHeight="59.0" prefWidth="128.0" text="Book Issue" />
+      <TextArea fx:id="bLSTA" layoutX="465.0" layoutY="172.0" prefHeight="59.0" prefWidth="128.0" promptText="Book List" />
+      <Button layoutX="465.0" layoutY="237.0" mnemonicParsing="false" onAction="#giveBooksOA" prefHeight="25.0" prefWidth="76.0" text="Give Books" />
+      <Label fx:id="errorL" alignment="CENTER" layoutX="-1.0" layoutY="381.0" prefHeight="17.0" prefWidth="600.0" text="Error" textAlignment="CENTER" textFill="RED" />
+      <Button layoutX="541.0" layoutY="237.0" mnemonicParsing="false" onAction="#cancelOA" text="Cancel" />
+      <ComboBox fx:id="sMICB" layoutX="14.0" layoutY="271.0" onAction="#sMICBOA" prefWidth="150.0" promptText="Member ID" />
+      <TextArea fx:id="sMBLTA" layoutX="164.0" layoutY="272.0" prefHeight="93.0" prefWidth="128.0" promptText="Book List" />
+      <ComboBox fx:id="uBICB" layoutX="316.0" layoutY="272.0" onAction="#uBICBOA" prefWidth="150.0" promptText="Book ID" />
+      <TextArea fx:id="sMLTA" layoutX="466.0" layoutY="273.0" prefHeight="99.0" prefWidth="128.0" promptText="Member List" />
+      <Button layoutX="14.0" layoutY="322.0" mnemonicParsing="false" onAction="#suspendOA" prefHeight="25.0" prefWidth="150.0" text="Suspend" />
+      <DatePicker fx:id="sDDP" layoutX="14.0" layoutY="296.0" prefHeight="25.0" prefWidth="150.0" promptText="Suspend Date" />
+      <TextField fx:id="sTCTF" editable="false" layoutX="317.0" layoutY="297.0" prefHeight="25.0" prefWidth="76.0" promptText="Total copy" />
+      <TextField fx:id="sACTF" editable="false" layoutX="394.0" layoutY="297.0" prefHeight="25.0" prefWidth="72.0" promptText="Available" />
+      <TextField fx:id="nCTF" layoutX="317.0" layoutY="322.0" promptText="New copies" />
+      <Button layoutX="316.0" layoutY="347.0" mnemonicParsing="false" onAction="#aNCOA" prefHeight="25.0" prefWidth="150.0" text="Add New Copies" />
    </children>
 </AnchorPane>
