@@ -1,0 +1,16 @@
+Library Management
+Librian, Member, SoD
+
+Librian - Add member, Add SoD, Add Book, Accept/Reject Borrow Book
+Member - Borrow Book, Return Book, Report
+SoD - Check Report, Ban Member
+
+Login, Create Account, Dashboard
+Librian - Member List, SoD List, Add Book/Book List, Borrow Book List
+Member - Borrow Book/Return Book, Report
+SoD - Report List, Ban Member
+
+UML Diagram(MS2)
+Fxml Design + Database(MS3)
+Model Class
+Controller class code
