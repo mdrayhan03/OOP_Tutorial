@@ -14,3 +14,18 @@ UML Diagram(MS2)
 Fxml Design + Database(MS3)
 Model Class
 Controller class code
+
+UML Diagram - 
+1. All users are model class
+2. Librian 
+	1. Librian can add Member (Librian, Member){add}
+	2. Librian can add SoD (Librian, SoD){add}
+	3. Librian can add Book (Librian, Book){add}
+	4. Librian can accept/reject borrow book (Librian, Borrow Book){accept/reject}
+   Member
+	1. Member can borrow Book (Member, Book){borrow}
+	2. Member can return Book (Member, Book){return}
+	3. Member can report to SoD (Member, SoD){report}
+   SoD
+	1. SoD can check Report(SoD, Report){check}
+	2. SoD can ban Member(SoD, Member){ban}
