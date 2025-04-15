@@ -17,19 +17,19 @@
          </font>
       </Label>
       <TextField fx:id="bookTitleTF" layoutX="14.0" layoutY="72.0" promptText="Book Title" />
-      <TextField layoutX="14.0" layoutY="107.0" promptText="Author Name" />
-      <TextField layoutX="14.0" layoutY="145.0" promptText="Description" />
-      <DatePicker layoutX="205.0" layoutY="72.0" prefHeight="25.0" prefWidth="149.0" promptText="Publication Date" />
-      <TextField layoutX="205.0" layoutY="107.0" promptText="Total Copy" />
-      <Button layoutX="205.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Add New Book" />
-      <TableView layoutY="249.0" prefHeight="151.0" prefWidth="500.0">
+      <TextField fx:id="aNTF" layoutX="14.0" layoutY="107.0" promptText="Author Name" />
+      <TextField fx:id="desTF" layoutX="14.0" layoutY="145.0" promptText="Description" />
+      <DatePicker fx:id="pubDP" layoutX="205.0" layoutY="72.0" prefHeight="25.0" prefWidth="149.0" promptText="Publication Date" />
+      <TextField fx:id="totalCopyTF" layoutX="205.0" layoutY="107.0" promptText="Total Copy" />
+      <Button layoutX="205.0" layoutY="145.0" mnemonicParsing="false" onAction="#addNewBookOA" prefHeight="25.0" prefWidth="149.0" text="Add New Book" />
+      <TableView fx:id="bookTV" layoutY="249.0" prefHeight="151.0" prefWidth="500.0">
         <columns>
-          <TableColumn prefWidth="48.333343505859375" text="ID" />
-          <TableColumn prefWidth="79.0" text="Title" />
-            <TableColumn prefWidth="107.3333740234375" text="Author Name" />
-            <TableColumn prefWidth="98.66668701171875" text="Addition Date" />
-            <TableColumn prefWidth="73.0" text="Total" />
-            <TableColumn prefWidth="74.0" text="Available" />
+          <TableColumn fx:id="idTC" prefWidth="48.333343505859375" text="ID" />
+          <TableColumn fx:id="titleTC" prefWidth="79.0" text="Title" />
+            <TableColumn fx:id="aNTC" prefWidth="107.3333740234375" text="Author Name" />
+            <TableColumn fx:id="aDTC" prefWidth="98.66668701171875" text="Addition Date" />
+            <TableColumn fx:id="tCTC" prefWidth="73.0" text="Total" />
+            <TableColumn fx:id="availableTC" prefWidth="74.0" text="Available" />
         </columns>
       </TableView>
       <DatePicker layoutX="14.0" layoutY="200.0" prefHeight="25.0" prefWidth="149.0" promptText="Addition Date" />

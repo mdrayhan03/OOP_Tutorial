@@ -8,31 +8,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.library.Librian.BorrowBookListFxml">
    <children>
-      <TableView layoutY="216.0" prefHeight="184.0" prefWidth="500.0">
+      <TableView fx:id="bBTV" layoutY="216.0" prefHeight="184.0" prefWidth="500.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Borrow ID" />
-          <TableColumn prefWidth="75.0" text="Student ID" />
-            <TableColumn prefWidth="75.0" text="Book ID" />
-            <TableColumn prefWidth="75.0" text="Issue Date" />
-            <TableColumn prefWidth="75.0" text="Return Date" />
-            <TableColumn prefWidth="75.0" text="Status" />
+          <TableColumn fx:id="idTC" prefWidth="75.0" text="Borrow ID" />
+          <TableColumn fx:id="mIDTC" prefWidth="75.0" text="Member ID" />
+            <TableColumn fx:id="bIDTC" prefWidth="75.0" text="Book ID" />
+            <TableColumn fx:id="iDTC" prefWidth="75.0" text="Issue Date" />
+            <TableColumn fx:id="rDTC" prefWidth="75.0" text="Return Date" />
+            <TableColumn fx:id="statusTC" prefWidth="75.0" text="Status" />
         </columns>
       </TableView>
-      <ComboBox layoutX="26.0" layoutY="64.0" prefWidth="150.0" promptText="Borrow Book ID" />
+      <ComboBox fx:id="bBIDCB" layoutX="26.0" layoutY="64.0" onAction="#bBIDCBOA" prefWidth="150.0" promptText="Borrow Book ID" />
       <Label layoutX="176.0" layoutY="14.0" text="Borrow Book">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="26.0" layoutY="109.0" text="Label" />
-      <Label layoutX="26.0" layoutY="161.0" text="Label" />
-      <Label layoutX="194.0" layoutY="109.0" text="Label" />
-      <Label layoutX="194.0" layoutY="161.0" text="Label" />
-      <Label layoutX="324.0" layoutY="109.0" text="Label" />
-      <Button layoutX="326.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Accept" />
-      <Button layoutX="326.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Reject" />
+      <Label fx:id="bIDL" layoutX="26.0" layoutY="109.0" text="Label" />
+      <Label fx:id="mIDL" layoutX="26.0" layoutY="161.0" text="Label" />
+      <Label fx:id="iDL" layoutX="194.0" layoutY="109.0" text="Label" />
+      <Label fx:id="rDL" layoutX="194.0" layoutY="161.0" text="Label" />
+      <Label fx:id="statusL" layoutX="324.0" layoutY="109.0" text="Label" />
+      <Button layoutX="326.0" layoutY="136.0" mnemonicParsing="false" onAction="#acceptOA" prefHeight="25.0" prefWidth="148.0" text="Accept" />
+      <Button layoutX="326.0" layoutY="166.0" mnemonicParsing="false" onAction="#rejectOA" prefHeight="25.0" prefWidth="148.0" text="Reject" />
    </children>
 </AnchorPane>

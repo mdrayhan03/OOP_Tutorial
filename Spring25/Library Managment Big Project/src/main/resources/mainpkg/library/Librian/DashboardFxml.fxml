@@ -15,6 +15,7 @@
             <Button mnemonicParsing="false" onAction="#addSodButtonOA" prefWidth="100.0" text="Add Sod" />
             <Button mnemonicParsing="false" onAction="#addBookButtonOA" prefWidth="100.0" text="Add Book" />
             <Button mnemonicParsing="false" onAction="#borrowBookButtonOA" prefWidth="100.0" text="Borrow Book" />
+            <Button mnemonicParsing="false" onAction="#signoutOA" prefHeight="25.0" prefWidth="101.0" text="Sign Out" />
          </children>
       </VBox>
    </left>

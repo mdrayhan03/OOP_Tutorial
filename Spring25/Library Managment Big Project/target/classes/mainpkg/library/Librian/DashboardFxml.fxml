@@ -8,13 +8,14 @@
 
 <BorderPane fx:id="librianBP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.library.Librian.DashboardFxmlController">
    <left>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#dashboardButonOA" prefWidth="100.0" text="Dashboard" />
             <Button mnemonicParsing="false" onAction="#addMemberButtonOA" prefWidth="100.0" text="Add Member" />
             <Button mnemonicParsing="false" onAction="#addSodButtonOA" prefWidth="100.0" text="Add Sod" />
             <Button mnemonicParsing="false" onAction="#addBookButtonOA" prefWidth="100.0" text="Add Book" />
             <Button mnemonicParsing="false" onAction="#borrowBookButtonOA" prefWidth="100.0" text="Borrow Book" />
+            <Button mnemonicParsing="false" onAction="#signoutOA" prefHeight="25.0" prefWidth="101.0" text="Sign Out" />
          </children>
       </VBox>
    </left>

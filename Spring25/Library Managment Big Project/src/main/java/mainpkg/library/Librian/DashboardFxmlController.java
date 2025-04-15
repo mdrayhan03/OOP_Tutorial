@@ -64,4 +64,16 @@ public class DashboardFxmlController
     @javafx.fxml.FXML
     public void dashboardButonOA(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void signoutOA(ActionEvent actionEvent) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("LoginFxml.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.show();
+    }
 }
