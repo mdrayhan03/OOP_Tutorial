@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.finalsp25.SKDSir1">
+   <children>
+      <TextField fx:id="idTF" layoutX="25.0" layoutY="26.0" promptText="ID" />
+      <TextField fx:id="nameTF" layoutX="26.0" layoutY="61.0" promptText="Name" />
+      <TextField fx:id="desiTF" layoutX="26.0" layoutY="98.0" promptText="Designation" />
+      <DatePicker fx:id="applyDP" layoutX="207.0" layoutY="26.0" prefHeight="25.0" prefWidth="149.0" promptText="Apply date" />
+      <CheckBox fx:id="graduateChB" layoutX="207.0" layoutY="65.0" mnemonicParsing="false" text="Fresh Graduate" />
+      <TextField fx:id="experienceTF" layoutX="206.0" layoutY="98.0" promptText="Experience" />
+      <TextField fx:id="expertiseTF" layoutX="413.0" layoutY="26.0" promptText="Expertise" />
+      <Button layoutX="462.0" layoutY="98.0" mnemonicParsing="false" onAction="#expertiseOA" text="Add Expertise" />
+      <Button layoutX="256.0" layoutY="188.0" mnemonicParsing="false" onAction="#applyOA" text="Apply" />
+      <Button layoutX="254.0" layoutY="274.0" mnemonicParsing="false" onAction="#nextOA" text="Next" />
+   </children>
+</AnchorPane>
