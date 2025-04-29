@@ -121,4 +121,14 @@ public class DataCreationToFileViewSce4Controller
             }
         }
     }
+
+//    @FXML
+//    private void saveToBin() {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("monitors.bin")))) {
+//            oos.writeObject(new java.util.ArrayList<>(monitorList));
+//            showAlert("Saved successfully.");
+//        } catch (Exception e) {
+//            showAlert("Failed to save: " + e.getMessage());
+//        }
+//    }
 }
