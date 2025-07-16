@@ -1,0 +1,22 @@
+Hospital Management
+User
+1. Admin
+	* create doctor account
+	* new patient account verify
+	* can delete doctor/patient
+2. Doctor
+	* accept/reject appointment
+	* create prescription
+	* see prescription
+3. Patient
+	* apply appointment
+	* send previous prescription
+
+Noun = Model class
+Verb = relationship
+
+UML Diagram
+1. Admin
+	* Admin, Doctor, create
+	* Admin, Patient, verify
+	* Admin, Doctor, Patient, delete
