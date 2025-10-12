@@ -1,0 +1,9 @@
+Car -> wheel, engine, handle, body
+
+Human -> hand size, leg size, eye color
+
+Man -> long, short, black
+
+Car c
+
+lst = ["long", "short", "black"]
