@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="529.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.demo.JobApplicationController">
+   <children>
+      <Label layoutX="259.0" layoutY="6.0" text="Job Application" />
+      <Line endX="100.0" endY="175.0" layoutX="276.0" layoutY="186.0" startX="100.0" startY="-148.0" />
+      <Label layoutX="14.0" layoutY="44.0" text="Applicant ID" />
+      <Label layoutX="14.0" layoutY="73.0" text="Name" />
+      <Label layoutX="14.0" layoutY="111.0" text="Email" />
+      <Label layoutX="14.0" layoutY="148.0" text="Phone No" />
+      <Label layoutX="14.0" layoutY="191.0" text="Github" />
+      <Label layoutX="15.0" layoutY="299.0" text="Skills" />
+      <Button layoutX="169.0" layoutY="448.0" mnemonicParsing="false" onAction="#submitOA" text="Submit" />
+      <Label layoutX="15.0" layoutY="226.0" text="Gender" />
+      <Label fx:id="idL" layoutX="106.0" layoutY="44.0" text="Label" />
+      <TextField fx:id="nameTF" layoutX="106.0" layoutY="69.0" />
+      <TextField fx:id="emailTF" layoutX="106.0" layoutY="107.0" />
+      <TextField fx:id="pNTF" layoutX="106.0" layoutY="144.0" />
+      <TextField fx:id="githubTF" layoutX="106.0" layoutY="179.0" />
+      <RadioButton fx:id="maleRB" layoutX="106.0" layoutY="226.0" mnemonicParsing="false" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="tg" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="femaleRB" layoutX="166.0" layoutY="226.0" mnemonicParsing="false" text="Female" toggleGroup="$tg" />
+      <CheckBox fx:id="fresherChB" layoutX="259.0" layoutY="226.0" mnemonicParsing="false" text="Fresh Graduate?" />
+      <Label layoutX="15.0" layoutY="259.0" text="Year of Exp" />
+      <TextField fx:id="expTF" layoutX="106.0" layoutY="255.0" promptText="If fresher experience will be 0" />
+      <TextField fx:id="skillTF" layoutX="106.0" layoutY="295.0" prefHeight="25.0" prefWidth="66.0" />
+      <Button layoutX="239.0" layoutY="295.0" mnemonicParsing="false" onAction="#addSkillOA" text="Add Skill" />
+      <Label fx:id="skillsL" layoutX="61.0" layoutY="334.0" text="Label" />
+      <Label layoutX="15.0" layoutY="377.0" text="Description" />
+      <TextArea fx:id="descriptionTA" layoutX="106.0" layoutY="362.0" prefHeight="77.0" prefWidth="258.0" promptText="Must be in 100 characters" />
+      <Label fx:id="outputL" layoutX="61.0" layoutY="491.0" text="output" />
+   </children>
+</AnchorPane>
