@@ -1,0 +1,20 @@
+USER: Admin, Customer
+
+Admin:
+Goal1: Admin can add new products
+Goal2: Admin can see the sell history
+
+Customer:
+Goal1: Customer can buy products and create history
+Goal2: Customer can make invoice
+Goal3: Customer can see his/her history
+
+
+UML:
+Admin:
+Goal1: Admin, Product | can add new product
+Goal2: Admin, History | can see the sell history
+Customer:
+Goal1: Customer, Product, History | can buy products, create history
+Goal2: Customer, Invoice | can make invoice
+Goal3: Customer, History | can see history
