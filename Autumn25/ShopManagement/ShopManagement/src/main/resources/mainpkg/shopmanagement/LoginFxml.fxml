@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.shopmanagement.LoginFxmlController">
+   <children>
+      <Label layoutX="285.0" layoutY="24.0" text="Login" />
+      <Label layoutX="190.0" layoutY="121.0" text="User ID" />
+      <Label layoutX="190.0" layoutY="156.0" text="Password" />
+      <TextField fx:id="idTF" layoutX="291.0" layoutY="117.0" />
+      <PasswordField fx:id="passwordPF" layoutX="291.0" layoutY="152.0" />
+      <Button layoutX="256.0" layoutY="204.0" mnemonicParsing="false" onAction="#loginOA" prefHeight="25.0" prefWidth="89.0" text="Login" />
+      <Button layoutX="476.0" layoutY="344.0" mnemonicParsing="false" onAction="#createAccountOA" text="Create Account" />
+   </children>
+</AnchorPane>
