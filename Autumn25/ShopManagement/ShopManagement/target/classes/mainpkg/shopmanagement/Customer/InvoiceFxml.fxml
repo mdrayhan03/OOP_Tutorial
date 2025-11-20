@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.shopmanagement.Customer.InvoiceFxmlController">
+   <children>
+      <TableView fx:id="historyTV" layoutY="288.0" prefHeight="112.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="historyIDTC" prefWidth="75.0" text="History ID" />
+          <TableColumn fx:id="productsTC" prefWidth="379.0" text="Products" />
+            <TableColumn fx:id="dateTC" prefWidth="118.0" text="Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="281.0" layoutY="14.0" text="Invoice" />
+      <Label layoutX="34.0" layoutY="48.0" text="History ID" />
+      <ComboBox fx:id="historyIDCB" layoutX="105.0" layoutY="44.0" onAction="#historyIDCBOA" prefWidth="150.0" />
+      <Label layoutX="34.0" layoutY="91.0" text="His. Date" />
+      <Label layoutX="34.0" layoutY="130.0" text="Product List" />
+      <Label layoutX="33.0" layoutY="200.0" text="Total Cost" />
+      <Button layoutX="34.0" layoutY="239.0" mnemonicParsing="false" onAction="#createInvoiceOA" prefHeight="25.0" prefWidth="108.0" text="Create Invoice" />
+      <Button layoutX="168.0" layoutY="239.0" mnemonicParsing="false" onAction="#makePDFOA" prefHeight="25.0" prefWidth="108.0" text="Make PDF" />
+      <Label fx:id="tCostL" layoutX="104.0" layoutY="200.0" text="Label" />
+      <TextArea fx:id="demoInvoiceTA" layoutX="306.0" layoutY="74.0" prefHeight="203.0" prefWidth="243.0" />
+      <Label fx:id="hDateL" layoutX="105.0" layoutY="91.0" text="Label" />
+      <Label layoutX="305.0" layoutY="48.0" text="Date" />
+      <Label fx:id="dateL" layoutX="355.0" layoutY="48.0" text="Label" />
+      <TextArea fx:id="productsTA" editable="false" layoutX="105.0" layoutY="130.0" prefHeight="70.0" prefWidth="194.0" />
+   </children>
+</AnchorPane>
