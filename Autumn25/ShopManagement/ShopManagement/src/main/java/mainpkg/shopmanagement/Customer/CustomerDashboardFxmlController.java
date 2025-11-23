@@ -8,6 +8,7 @@ import javafx.scene.control.* ;
 import javafx.event.* ;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import mainpkg.shopmanagement.Admin.Admin;
 import mainpkg.shopmanagement.HelloApplication;
 
 import java.io.IOException;
@@ -21,6 +22,13 @@ public class CustomerDashboardFxmlController
     private Label totalBuyL;
     @javafx.fxml.FXML
     private Label greetL;
+
+    Customer customer ;
+
+    public void getter(Customer customer) {
+        this.customer = customer ;
+        greetL.setText("Welcome " + this.customer.getName());
+    }
 
     @javafx.fxml.FXML
     public void initialize() {

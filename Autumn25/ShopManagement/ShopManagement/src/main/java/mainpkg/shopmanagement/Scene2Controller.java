@@ -27,14 +27,15 @@ public class Scene2Controller
 
     @javafx.fxml.FXML
     public void scene1OA(ActionEvent actionEvent) throws IOException {
-        Parent root = null ;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene1.fxml"));
-        root = fxmlLoader.load();
-        Scene scene = new Scene(root) ;
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        Stage stage = new Stage() ;
-        stage.setScene(scene);
-//        stage.setTitle("Admin Page");
-        stage.show();
+//        Parent root = null ;
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene1.fxml"));
+//        root = fxmlLoader.load();
+//        Scene scene = new Scene(root) ;
+//        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+////        Stage stage = new Stage() ;
+//        stage.setScene(scene);
+////        stage.setTitle("Admin Page");
+//        stage.show();
+        SceneSwitcher.fullSceneWithoutController(actionEvent, "Scene1.fxml");
     }
 }

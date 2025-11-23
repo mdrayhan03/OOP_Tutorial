@@ -19,6 +19,14 @@ public class AdminDashboardFxmlController
     @javafx.fxml.FXML
     private Label greetL;
 
+    Admin admin ;
+
+    public void getter(Admin admin) {
+        this.admin = admin ;
+
+        greetL.setText("Welcom " + this.admin.getName());
+    }
+
     @javafx.fxml.FXML
     public void initialize() {
     }

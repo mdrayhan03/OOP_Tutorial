@@ -23,18 +23,21 @@ public class Scene1Controller
     public void scene2OA(ActionEvent actionEvent) throws IOException {
         String demo = demoTF.getText();
 
-        Parent root = null ;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene2.fxml"));
-        root = fxmlLoader.load();
-
-        Scene2Controller scene2Controller = fxmlLoader.getController() ;
+//        Parent root = null ;
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene2.fxml"));
+//        root = fxmlLoader.load();
+//
+//        Scene2Controller scene2Controller = fxmlLoader.getController() ;
+//        scene2Controller.setter(demo);
+//
+//        Scene scene = new Scene(root) ;
+//        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+////        Stage stage = new Stage() ;
+//        stage.setScene(scene);
+////        stage.setTitle("Admin Page");
+//        stage.show();
+        Scene2Controller scene2Controller = SceneSwitcher.fullSceneWithController(actionEvent, "Scene2.fxml") ;
         scene2Controller.setter(demo);
 
-        Scene scene = new Scene(root) ;
-        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-//        Stage stage = new Stage() ;
-        stage.setScene(scene);
-//        stage.setTitle("Admin Page");
-        stage.show();
     }
 }
