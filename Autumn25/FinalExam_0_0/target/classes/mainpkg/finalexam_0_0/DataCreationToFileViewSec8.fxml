@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.finalexam_0_0.DataCreationToFileViewSec8Controller">
+   <children>
+      <Label layoutX="34.0" layoutY="26.0" text="Enter NID:" />
+      <TextField fx:id="nidTF" layoutX="114.0" layoutY="22.0" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="34.0" layoutY="66.0" text="Enter Name:" />
+      <TextField fx:id="nameTF" layoutX="114.0" layoutY="62.0" prefHeight="25.0" prefWidth="157.0" />
+      <Label layoutX="303.0" layoutY="26.0" text="Select ZipCode:" />
+      <ComboBox fx:id="zipCodeCB" layoutX="422.0" layoutY="22.0" prefHeight="25.0" prefWidth="150.0" />
+      <CheckBox fx:id="hasPassportChB" layoutX="31.0" layoutY="159.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="164.0" text="Has Previous Passport?" />
+      <Label layoutX="34.0" layoutY="106.0" text="Date of Issue?" />
+      <DatePicker fx:id="issueDateDP" layoutX="116.0" layoutY="102.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="303.0" layoutY="66.0" text="Select Passport Type:" />
+      <ComboBox fx:id="passportTypeCB" layoutX="422.0" layoutY="62.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="302.0" layoutY="106.0" text="Date of Expire:?" />
+      <DatePicker fx:id="expiryDateDP" layoutX="420.0" layoutY="102.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="216.0" layoutY="159.0" prefHeight="17.0" prefWidth="191.0" text="Enter Previous Passport No (if any):" />
+      <TextField fx:id="prevPassportNoTF" layoutX="413.0" layoutY="155.0" prefHeight="25.0" prefWidth="157.0" />
+      <Button layoutX="26.0" layoutY="257.0" mnemonicParsing="false" onAction="#createAndSaveOA" prefHeight="44.0" prefWidth="546.0" text="Validate and Append New Passport Instance to Passport.bin file">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="394.0" layoutY="333.0" mnemonicParsing="false" onAction="#gotoDataLoadingOA" prefHeight="25.0" prefWidth="176.0" text="Go to Data Loading Scene --&gt;" />
+      <Label layoutX="135.0" layoutY="208.0" prefHeight="20.0" prefWidth="157.0" text="Enter New Passport No:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="passportNoTF" layoutX="303.0" layoutY="203.0" prefHeight="25.0" prefWidth="157.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

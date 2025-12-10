@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainpkg.finalexam_0_0.DataProcessingAndFilterOutputViewSec8Controller">
+   <children>
+      <Label layoutX="81.0" layoutY="24.0" text="Select Passport Type to Search:" />
+      <ComboBox fx:id="passportTypeCB" layoutX="266.0" layoutY="20.0" onAction="#passportTypeOA" prefWidth="150.0" />
+      <Label layoutX="106.0" layoutY="58.0" text="Select ZipCode to Search:" />
+      <ComboBox fx:id="zipCodeCB" layoutX="265.0" layoutY="54.0" onAction="#zipCodeOA" prefWidth="150.0" />
+      <Label layoutX="53.0" layoutY="116.0" prefHeight="17.0" prefWidth="495.0" text="Passport details matching selected passport type AND selected zipCode are:" />
+      <TableView fx:id="passportTV" layoutX="46.0" layoutY="145.0" prefHeight="200.0" prefWidth="525.0">
+        <columns>
+          <TableColumn fx:id="ppNoTC" prefWidth="84.0" text="PP No" />
+          <TableColumn fx:id="nameTC" prefWidth="126.0" text="Name" />
+            <TableColumn fx:id="ppTypeTC" prefWidth="69.0" text="PP Type" />
+            <TableColumn fx:id="zipCodeTC" prefWidth="75.0" text="ZipCode" />
+            <TableColumn fx:id="issueDateTC" prefWidth="83.0" text="DateOfIssue" />
+            <TableColumn fx:id="expiryDateTC" prefWidth="87.0" text="DateOfExpire" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
